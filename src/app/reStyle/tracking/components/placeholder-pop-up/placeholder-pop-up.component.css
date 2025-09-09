@@ -1,0 +1,19 @@
+.placeholder__pop-up {
+  position: fixed;
+  top: 22%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+  width: 300px;
+  margin-right: 110px;
+  outline-color: #757DE8;
+  outline-style: solid;
+  outline-width: 1px;
+  color: #757DE8;
+}
+
+.placeholder__pop-up__title {
+  color:#3F51B5;
+  margin-bottom: 10px;
+}

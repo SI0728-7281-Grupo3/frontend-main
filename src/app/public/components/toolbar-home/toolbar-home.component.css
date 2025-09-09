@@ -1,0 +1,43 @@
+
+mat-toolbar {
+    position: fixed;
+    font-family: "Montserrat", sans-serif;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+}
+
+.spacer {
+    flex: 0.4;
+}
+
+.title-logo {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+button {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+button:hover {
+    color: #333333;
+}

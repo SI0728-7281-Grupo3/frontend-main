@@ -1,0 +1,66 @@
+.nombre_contratista{
+  align-self: center;
+  left: 43%;
+  position: fixed;
+  color: #333;
+  margin:20px
+}
+
+.p{
+  font-size: 5px;
+  align-self: center;
+  left: 43%;
+  position: fixed;
+  color: #333;
+}
+
+.timeline {
+  padding-left: 5rem;
+  top:12%;
+  display: flex;
+  position: relative;
+}
+
+.timeline__items {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  margin-left: 22rem;
+}
+
+.timeline__item {
+  margin-left: 3rem;
+  margin-top: 10px;
+  align-items: center;
+}
+
+button {
+  margin-top: 7px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: #757DE8;
+  opacity: 60%;
+
+}
+
+button:hover {
+  opacity:100%;
+  width: 17px;
+  height: 17px;
+}
+
+h2 {
+  margin-bottom: 2px;
+  font-size: 15px;
+  color: #757DE8;
+  opacity: 60%;
+}
+h2:hover {
+  opacity:100%;
+  font-size: 16px;
+}
+
+

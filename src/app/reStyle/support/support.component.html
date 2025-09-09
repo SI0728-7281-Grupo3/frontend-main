@@ -1,0 +1,48 @@
+<app-toolbar *ngIf="this.type=='contractor'"/>
+<app-toolbar-remodeler *ngIf="this.type=='remodeler'"/>
+<app-contractor-sidebar-contractor *ngIf="this.type == 'contractor'" />
+<app-sidebar *ngIf="this.type == 'remodeler'" />
+
+<div id="support-container">
+    <div class="support-header-container">
+        <div class="support-header">
+            <p class="support-title">Tell us what happened</p>
+        </div>
+    </div>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" >
+        <mat-tab class="label-title" label="Information">
+            <div class="information-support-container">
+                <div class="support-form">
+                    <form [formGroup]="supportForm" (ngSubmit)="onSubmit()">
+                        <p style="font-weight: bold; font-size: 1.2rem;">Support</p>
+
+                        <p> Title <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Title</mat-label>
+                                <input matInput placeholder="" formControlName="title">
+                            </mat-form-field>
+                        </p>
+
+                        <p> Message <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Message</mat-label>
+                                <textarea matInput placeholder="" formControlName="message"></textarea>
+                            </mat-form-field>
+                        </p>
+
+                        <div class="send-button">
+                            <button class="send-btn" mat-flat-button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="advice-container">
+                    <mat-icon style="opacity: 70%">info</mat-icon>
+                    <div class="advice-paragraph">
+                        <p>Do you have a question or need help? Send us a message with your name, email and message details, and we'll get back to you as soon as possible!</p>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

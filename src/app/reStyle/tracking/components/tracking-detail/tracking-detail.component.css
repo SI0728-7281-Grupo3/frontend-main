@@ -1,0 +1,66 @@
+.tracking-detail{
+    margin-left: 18rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.remodeler-header-container{
+    display: flex;
+    justify-content: left;
+    width: 21%;
+    border-bottom: 3px solid #cccccc;
+}
+.remodeler-profile-header{
+    padding: 2rem 2rem 0;
+}
+.remodeler-name{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3F51B5;
+}
+.remodeler-exp{
+    padding: 3rem 1rem 0;
+    color: #757DE8;
+    border-left: 1px solid #cccccc;
+}
+.tracking-accordion{
+    margin-top: 2rem;
+}
+.progress-bar{
+    margin-left: 2rem;
+    width: 15rem;
+}
+.project-manager{
+    margin-left: 5rem;
+    margin-top: 0.75rem;
+    width: 15rem;
+}
+.task-description{
+    width: 20rem;
+}
+.complete-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.complete-btn{
+    color: white;
+    background-color: #dedeff;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+}
+.approve-btn{
+    color: white;
+    background-color: #3F51B5;
+    width: 12rem;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+}
+@media (hover){
+    .complete-btn:hover ,approve-btn:hover{
+        transition: 0.4s ease;
+        background-color: #DEDEFF;
+    }
+}

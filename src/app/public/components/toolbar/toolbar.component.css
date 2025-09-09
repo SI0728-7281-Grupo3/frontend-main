@@ -1,0 +1,76 @@
+.fixed-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.toolbar{
+  background-color: #3F51B5;
+  font-family: "Montserrat", sans-serif;
+}
+.mat-toolbar-row{
+  color: white;
+  display:flex;
+  justify-content:space-between;
+}
+.toolbar-title-logo{
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+  margin-left: 55rem;
+}
+.toolbar-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.toolbar-icons{
+  display:flex;
+  align-items:center;
+}
+.toolbar-chat, .toolbar-profile, .toolbar-menu{
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: 0.4s ease;
+}
+.toolbar-msg,
+.toolbar-prof{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.material-icons-outlined{
+  margin: 0 10px;
+}
+.toolbar-menu .material-icons-outlined{
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+@media (hover){
+  .toolbar-chat:hover, .toolbar-profile:hover, .toolbar-menu:hover{
+    transform: translateY(3px);
+    transition: 0.4s ease;
+    color: #DEDEFF;
+  }
+}
+@media screen and (max-width: 768px) {
+  .toolbar-icons p {
+    display: none;
+  }
+  .toolbar-menu{
+
+    display: block;
+  }
+  .toolbar-title-logo {
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 1480px) {
+  .toolbar-title-logo {
+    margin-left: 1rem;
+  }
+}

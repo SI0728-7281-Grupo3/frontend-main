@@ -1,0 +1,41 @@
+<div class="edit-form-container">
+    <h2 style="color:#3F51B5;">Editar Informacion de usuario</h2>
+    <form [formGroup]="editForm" (ngSubmit)="save()" class="edit-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="editForm.get('email')?.hasError('email')">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="editForm.get('email')?.hasError('email')">
+                Please enter a valid email
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+            <mat-error *ngIf="editForm.get('description')?.hasError('required')">
+                Description is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="phone">
+            <mat-error *ngIf="editForm.get('phone')?.hasError('required')">
+                Phone is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Image URL</mat-label>
+            <input matInput formControlName="image">
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-button (click)="close()">Cancel</button>
+    </form>
+</div>
+
+

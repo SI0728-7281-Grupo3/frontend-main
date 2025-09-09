@@ -1,0 +1,91 @@
+<app-toolbar> </app-toolbar>
+<app-sidebar></app-sidebar>
+
+
+<div class="nombre_contratista">
+  <h1>Hola! {{ this.name }}</h1>
+  <p> Este es el timeline de tu proyecto </p>
+</div>
+
+<div class="timeline">
+  <div class="timeline__items">
+    <div class="timeline__item">
+      <div class="requisitos">
+        <h2>Requisitos</h2>
+        <button (click)="clickChangePopUp('requisitos')"></button>
+        @if(enablePopUp == 'requisitos') {
+          <app-pop-up-requisitos [TimelineData]="TimelineData"></app-pop-up-requisitos>
+            }
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="visita_previa">
+        <h2>Visita Previa</h2>
+        <button (click)="clickChangePopUp('visita_previa')"></button>
+        @if(enablePopUp == 'visita_previa') {
+          <app-pop-up-visita-previa [TimelineData]="TimelineData"></app-pop-up-visita-previa>
+        }
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="cotizacion">
+        <h2>Cotizacion</h2>
+        <button (click)="clickChangePopUp('cotizacion')"></button>
+        @if(enablePopUp == 'cotizacion') {
+          <app-pop-up-cotizacion [TimelineData]="TimelineData"></app-pop-up-cotizacion>
+        }
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="aprovacion_de_proyecto">
+        <h2>Aprobacion de Proyecto</h2>
+        <button (click)="clickChangePopUp('aprovacion_de_proyecto')"></button>
+        @if(enablePopUp == 'aprovacion_de_proyecto') {<app-pop-up-aprovacion [TimelineData]="TimelineData"></app-pop-up-aprovacion>}
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="pago_inicial">
+        <h2>Pago Inicial</h2>
+        <button (click)="clickChangePopUp('pago_inicial')"></button>
+        @if(enablePopUp == 'pago_inicial') {
+          <app-placeholder-pop-up [TimelineData]="TimelineData"></app-placeholder-pop-up>
+        }
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="cumplimiento_50">
+        <h2>Cumplimiento al 50%</h2>
+        <button (click)="clickChangePopUp('cumplimiento_50')"></button>
+        @if(enablePopUp == 'cumplimiento_50') {
+          <app-placeholder-pop-up [TimelineData]="TimelineData"></app-placeholder-pop-up>
+        }
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="cumplimiento_100">
+        <h2>Cumplimiento al 100%</h2>
+        <button (click)="clickChangePopUp('cumplimiento_100')"></button>
+        @if(enablePopUp == 'cumplimiento_100') {
+          <app-placeholder-pop-up [TimelineData]="TimelineData"></app-placeholder-pop-up>
+        }
+      </div>
+    </div>
+
+    <div class="timeline__item">
+      <div class="revision">
+        <h2>Revision</h2>
+        <button (click)="clickChangePopUp('revision')"></button>
+        @if(enablePopUp == 'revision') {
+          <app-placeholder-pop-up [TimelineData]="TimelineData"></app-placeholder-pop-up>
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

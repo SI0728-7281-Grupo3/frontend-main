@@ -1,0 +1,166 @@
+<app-toolbar> </app-toolbar>
+<app-sidebar></app-sidebar>
+
+<div class="tracking-detail">
+
+    <div class="remodeler-header-container">
+        <div class="remodeler-profile-header">
+            <p class="remodeler-name">Proyecto</p>
+            <p class="remodeler-address">Project Management</p>
+        </div>
+        <div class="remodeler-exp">
+            <p class="remodeler-expertise">{{remodeler.name}}</p>
+        </div>
+    </div>
+
+    <div class="tracking-accordion">
+        <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Informacion del Proyecto
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Informacion y detalles sobre el proyecto
+                        <mat-icon>event_note</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="project-info">
+                    <mat-list role="list">
+                        <mat-list-item role="listitem"> Nombre Cliente: {{project.name + ' ' + project.surname}}</mat-list-item>
+                        <mat-list-item role="listitem"> Telefono : +51 {{project.phone}}</mat-list-item>
+                        <mat-list-item role="listitem"> Direccion: {{project.address + ', ' + project.city}}</mat-list-item>
+                        <mat-list-item role="listitem"> Email: {{project.email}}</mat-list-item>
+                        <mat-list-item role="listitem"> Presupuesto: $ {{project.budget}} USD</mat-list-item>
+                        <mat-list-item role="listitem"> Descripcion: {{project.summary}}</mat-list-item>
+                        <mat-list-item role="listitem"> Numero de habitaciones: {{project.rooms}}</mat-list-item>
+                        <mat-list-item role="listitem"> Fecha de entrega: {{ project.deadlineDate | date: 'longDate' }}</mat-list-item>
+                    </mat-list>
+                </div>
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Requerimientos del Cliente
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <div class="task-description">
+                            Lista de requerimientos del proyecto
+                            <mat-icon>rule</mat-icon>
+                        </div>
+                        <div class="project-manager">
+                            Project Manager: <br>
+                            <p style="color: #757DE8;">{{name}}</p>
+                        </div>
+                        <div class="progress-bar">
+                            <p>Estado:</p>
+                            <mat-progress-bar mode="determinate" [value]="progressRequirements"></mat-progress-bar>
+                        </div>
+                    </mat-panel-description>
+
+                </mat-expansion-panel-header>
+
+                <div class="project-requirements">
+                    <mat-list role="list">
+                        <mat-list-item role="listitem"> Tareas:</mat-list-item>
+                        <mat-selection-list #tasks>
+                            @for (task of requirements; track task) {
+                                <mat-list-option>{{ tracking?.requirements?.jobTitle }}</mat-list-option>
+                            }
+                        </mat-selection-list>
+                        <mat-list-item role="listitem"> Descripcion de Tarea: {{ tracking?.requirements?.jobDescription }}</mat-list-item>
+                        <mat-list-item lines="3">
+                            <span matListItemTitle>Requisitos:</span>
+                            {{ tracking?.requirements?.jobRequirements }}
+                        </mat-list-item>
+                    </mat-list>
+
+                    <button mat-button class="complete-btn" (click)="calculateProgressRequirements()" [disabled]="tasks.selectedOptions.selected.length === 0">Completado</button>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Visita Tecnica:
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <div class="task-description">
+                            Informacion sobre la visita tecnica
+                            <mat-icon>today</mat-icon>
+                        </div>
+                        <div class="project-manager">
+                            Project Manager: <br>
+                            <p style="color: #757DE8;">{{name}}</p>
+                        </div>
+                        <div class="progress-bar">
+                            <p>Estado:</p>
+                            <mat-progress-bar mode="determinate" [value]="progressVisitations"></mat-progress-bar>
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="project-visit">
+                    <mat-list role="list">
+                        <mat-list-item role="listitem"> Fecha:</mat-list-item>
+                        <mat-selection-list #visits>
+                            @for (visit of visitations; track visit) {
+                                <mat-list-option>{{ tracking?.technicalVisit?.date | date: 'longDate' }}</mat-list-option>
+                            }
+                        </mat-selection-list>
+                        <mat-list-item role="listitem"> Referencia: {{ tracking?.technicalVisit?.additionalDetails }}</mat-list-item>
+                        <mat-list-item role="listitem"> Precio: s/. {{ tracking?.technicalVisit?.price }} PEN</mat-list-item>
+                    </mat-list>
+
+                    <button mat-button class="complete-btn" (click)="calculateProgressVisitations()" [disabled]="visits.selectedOptions.selected.length === 0">Completado</button>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Cotizacion:
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <div class="task-description">
+                            Informacion sobre la cotizacion del proyecto
+                            <mat-icon>payments</mat-icon>
+                        </div>
+                        <div class="project-manager">
+                            Project Manager: <br>
+                            <p style="color: #757DE8;">{{name}}</p>
+                        </div>
+                        <div class="progress-bar">
+                            <p>Estado:</p>
+                            <mat-progress-bar mode="determinate" [value]="progressQuotes"></mat-progress-bar>
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="project-visit" *ngFor="let quote of tracking.quote">
+                    <mat-list role="list" >
+                        <mat-list-item role="listitem"> Opciones:</mat-list-item>
+                        <mat-selection-list #quotes [multiple]="false">
+                            <mat-list-option>{{ quote.description}}</mat-list-option>
+                        </mat-selection-list>
+                        <mat-list-item role="listitem"> Detalles: {{ quote.details }}</mat-list-item>
+                        <mat-list-item role="listitem"> Precio: $ {{ quote.price }} USD</mat-list-item>
+                    </mat-list>
+
+                    <button class="complete-btn" mat-button (click)="calculateProgressPayments()" [disabled]="quotes.selectedOptions.selected.length === 0">Completado</button>
+                </div>
+            </mat-expansion-panel>
+
+            <div class="complete-button">
+                <button class="approve-btn" mat-button (click)="updateProject()">Aprobar Proyecto</button>
+            </div>
+        </mat-accordion>
+    </div>
+
+
+
+
+</div>

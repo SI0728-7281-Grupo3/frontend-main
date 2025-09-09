@@ -1,0 +1,20 @@
+<div class="cotizacion__pop-up">
+  <h2 class="cotizacion__pop-up__title">Cotización</h2>
+  <div class="visita-previa__pop-up__icon">
+    <button mat-icon-button class="example-icon favorite-icon" (click)="openPopup()" aria-label="Edit button">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  @if(enablePopUp == 'edit-cotizacion') {
+    <app-pop-up-cotizacion-edit [TimelineData]="TimelineData"></app-pop-up-cotizacion-edit>
+  }
+  <div class="opciones_cotizacion">
+    <ul>
+      <li *ngFor="let opcion of TimelineData.cotizacion.opciones">
+        <h4>{{ opcion.descripcion }}</h4>
+        <p>Costo: S/.{{ opcion.costo }}</p>
+        <p>{{ opcion.detalle }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

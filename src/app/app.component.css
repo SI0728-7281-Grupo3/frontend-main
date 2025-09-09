@@ -1,0 +1,55 @@
+*{
+  font-family: Montserrat, sans-serif;
+}
+
+
+/* Estilos para el MatSnackBar */
+::ng-deep .snackbar-success {
+
+  background-color: #4caf50 !important; /* Verde */
+  color: #ffffff !important;
+  font-size: 16px !important;
+  border-radius: 4px !important;
+
+  /*
+  border-radius: 10px; !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  padding: 16px 24px !important;
+  text-align: center !important;
+  */
+}
+
+::ng-deep .snackbar-error {
+
+  background-color: #f44336 !important; /* Rojo */
+  color: #ffffff !important;
+  font-size: 16px !important;
+  border-radius: 4px !important;
+
+  /*
+  background-color: #f44336 !important;
+  border-radius: 10px; !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  padding: 16px 24px !important;
+  text-align: center !important;
+   */
+}
+
+
+::ng-deep .mat-snack-bar-container {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+::ng-deep .snackbar-custom {
+  min-width: unset !important; /* Reinicia el ancho mínimo para que el snackbar sea responsivo */
+}
+
+/* Estilos adicionales para elimar el cuadro negro */
+
+
+
+

@@ -1,0 +1,100 @@
+.profile-section {
+    margin-left: 18%;
+    margin-top: 2rem;
+    padding-top: 4rem;
+    margin-right: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+}
+.title-profile {
+    width: 440px;
+    display: inline-flex;
+    padding: 24px 32px;
+    align-items: center;
+    border-bottom: 5px solid #003F8F;
+}
+
+mat-card-title {
+    font-size: 35px;
+    font-weight: 600;
+    color: #003F8F;
+}
+mat-card-subtitle {
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 90%;
+    color: #003F8F;
+}
+.information-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+photo-profile {
+    width: 30%;
+    align-items: center;
+}
+.photo-profile img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #003F8F;
+    margin-left: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+.description-profile {
+    width: 40%;
+}
+.actions{
+    margin: 2rem;
+}
+.contact-information{
+    width: 20%;
+}
+.information {
+    display: flex;
+    align-items: center;
+}
+.icons {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+/*portfolio styles*/
+.portfolio-content{
+    margin-top: 2rem;
+    margin-right: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    flex-direction: row;
+}
+.portfolio-projects{
+    width: 60%;
+}
+.portfolio-projects h3{
+    padding-left: 5px;
+}
+.review-card{
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+.review-card-img{
+    width: 300px;
+    margin-bottom: 1rem;
+}
+.review-content{
+    padding: 1rem;
+}
+
+

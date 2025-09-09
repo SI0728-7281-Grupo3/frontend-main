@@ -1,0 +1,10 @@
+<div class="aprobacion__pop-up">
+  <h2 class="aprobacion__pop-up__title">Estado de Aprobación</h2>
+  <h4>Esperando que el cliente apruebe una de las opciones propuestas</h4>
+  <div class="status">
+    @if(TimelineData.aprobacionProyecto){
+      <mat-icon aria-hidden="false" aria-label="Example check icon" fontIcon="check"></mat-icon>
+    }
+    <p>{{ TimelineData.aprobacionProyecto ? 'Aprobado' : 'Pendiente' }}</p>
+  </div>
+ </div>

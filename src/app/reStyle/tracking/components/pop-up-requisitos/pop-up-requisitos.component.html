@@ -1,0 +1,10 @@
+<div class="requisitos__pop-up">
+  <h2 class="requisitos__pop-up__title">Requerimientos</h2>
+  <h3>Establecido por el contratista. Los requerimientos no se pueden modificar.</h3>
+  <h4 class="titulo_trabajo">{{ TimelineData.requerimientos.tituloTrabajo }}</h4>
+  <p class="descripcion_trabajo">{{ TimelineData.requerimientos.descripcionTrabajo }}</p>
+  <ul>
+    <li *ngFor="let requerimiento of TimelineData.requerimientos.listaRequerimientos">{{ requerimiento }}</li>
+  </ul>
+  <button (click)="aceptarProyecto()">Aceptar Proyecto</button>
+</div>

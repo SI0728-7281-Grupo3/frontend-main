@@ -1,0 +1,48 @@
+<form [formGroup]="myform" (ngSubmit)="Saveuser()">
+  <h1 mat-dialog-title>Cotizacion</h1>
+  <div mat-dialog-content>
+    <p>Opción 1</p>
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+      <input formControlName="descripcion" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Costo</mat-label>
+      <input matInput formControlName="costo">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Detalle</mat-label>
+      <input matInput formControlName="detalle">
+    </mat-form-field>
+    <p>Opción 2</p>
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+      <input formControlName="descripcion" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Costo</mat-label>
+      <input matInput formControlName="costo">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Detalle</mat-label>
+      <input matInput formControlName="detalle">
+    </mat-form-field>
+    <p>Opción 3</p>
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+      <input formControlName="descripcion" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Costo</mat-label>
+      <input matInput formControlName="costo">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Detalle</mat-label>
+      <input matInput formControlName="detalle">
+    </mat-form-field>
+  </div>
+  <mat-dialog-actions>
+    <button mat-raised-button type="submit" color="primary">Guardar</button>
+    <a (click)="closePopUp()" mat-raised-button color="mat-deep-purple">Cerrar</a>
+  </mat-dialog-actions>
+</form>

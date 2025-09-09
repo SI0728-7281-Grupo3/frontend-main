@@ -1,0 +1,386 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "email": "gonzalo@restyle.com",
+      "password": "gonzalo",
+      "type": "contractor",
+      "firstName": "Gonzalo",
+      "paternalSurname": "Gonzalez",
+      "maternalSurname": "Alvarez"
+    },
+    {
+      "id": 2,
+      "email": "juan@restyle.com",
+      "password": "juan",
+      "type": "contractor",
+      "firstName": "Juan",
+      "paternalSurname": "Perez",
+      "maternalSurname": "Garcia"
+    },
+    {
+      "id": 3,
+      "email": "pedro@techelp.com",
+      "password": "pedro",
+      "type": "contractor",
+      "firstName": "Pedro",
+      "paternalSurname": "Garcia",
+      "maternalSurname": "Huaman"
+    },
+    {
+      "id": 4,
+      "email": "alonso@restyle.com",
+      "password": "alonso",
+      "type": "remodeler",
+      "firstName": "Alonso",
+      "paternalSurname": "Ruiz",
+      "maternalSurname": "Galindo"
+    },
+    {
+      "id": 5,
+      "email": "rafael@restyle.com",
+      "password": "rafael",
+      "type": "remodeler",
+      "firstName": "Rafael",
+      "paternalSurname": "Tarazona",
+      "maternalSurname": "Rojas"
+    },
+    {
+      "id": 6,
+      "email": "mariana@restyle.com",
+      "password": "mariana",
+      "type": "remodeler",
+      "firstName": "Mariana",
+      "paternalSurname": "Hernandez",
+      "maternalSurname": "Quintero"
+    },
+    {
+      "id": 7,
+      "username": "Alejandra",
+      "email": "alejandra@restyle.com",
+      "password": "alejandra",
+      "type": "remodeler",
+      "firstName": "Alejandra",
+      "paternalSurname": "Diaz",
+      "maternalSurname": "V",
+      "image": "https://img.freepik.com/foto-gratis/cintura-arriba-retrato-hombre-guapo-afeitar-serio-mantiene-manos-juntas-vestido-camisa-azul-oscuro-ha-hablado-interlocutor-esta-parado-contra-pared-blanca-freelancer-hombre-seguro-si-mismo_273609-16320.jpg?t=st=1716787847~exp=1716791447~hmac=40efe191ceb8d2265eccb435fd9d7a32512a4fd4be65de25c015253f9869fac0&w=1380"
+    },
+    {
+      "id": 8,
+      "username": "Jose",
+      "email": "jose@restyle.com",
+      "password": "jose",
+      "type": "contractor",
+      "firstName": "Jose",
+      "paternalSurname": "Gutierrez",
+      "maternalSurname": "Garcia",
+      "image": "https://img.freepik.com/foto-gratis/cintura-arriba-retrato-hombre-guapo-afeitar-serio-mantiene-manos-juntas-vestido-camisa-azul-oscuro-ha-hablado-interlocutor-esta-parado-contra-pared-blanca-freelancer-hombre-seguro-si-mismo_273609-16320.jpg?t=st=1716787847~exp=1716791447~hmac=40efe191ceb8d2265eccb435fd9d7a32512a4fd4be65de25c015253f9869fac0&w=1380"
+    }
+  ],
+  "remodeler": [
+    {
+      "id": 1,
+      "userId": 4,
+      "phone": "987654321",
+      "description": "Soy un apasionado de la remodelación y diseño de interiores, comprometido con la excelencia en cada proyecto. Con habilidades técnicas y creativas, busco superar las expectativas de mis clientes, transformando espacios en lugares funcionales y estéticamente atractivos.",
+      "subscription": "premium",
+      "businessId": 1
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "phone": "987654321",
+      "description": "Soy un apasionado de la remodelación y diseño de interiores, comprometido con la excelencia en cada proyecto. Con habilidades técnicas y creativas, busco superar las expectativas de mis clientes, transformando espacios en lugares funcionales y estéticamente atractivos.",
+      "subscription": "premium",
+      "businessId": 2
+    },
+    {
+      "id": 3,
+      "userId": 6,
+      "phone": "987654321",
+      "description": "Soy un apasionada de la remodelación y diseño de interiores, comprometido con la excelencia en cada proyecto. Con habilidades técnicas y creativas, busco superar las expectativas de mis clientes, transformando espacios en lugares funcionales y estéticamente atractivos.",
+      "subscription": "premium",
+      "businessId": 3
+    },
+    {
+      "id": 4,
+      "userId": 7,
+      "phone": "123456789",
+      "description": "Description",
+      "subscription": "premium",
+      "businessId": 4
+    }
+  ],
+  "contractor": [
+    {
+      "id": 1,
+      "userId": 1,
+      "phone": "987654321",
+      "description": "Propietario entusiasta busca remodeladora para transformar su hogar en un espacio moderno y acogedor. Busco profesionalismo, creatividad y atención al detalle para cumplir con mis expectativas y mejorar el valor de mi propiedad."
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "phone": "987654321",
+      "description": "Propietario entusiasta busca remodeladora para transformar su hogar en un espacio moderno y acogedor. Busco profesionalismo, creatividad y atención al detalle para cumplir con mis expectativas y mejorar el valor de mi propiedad."
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "phone": "987654321",
+      "description": "Propietario entusiasta busca remodeladora para transformar su hogar en un espacio moderno y acogedor. Busco profesionalismo, creatividad y atención al detalle para cumplir con mis expectativas y mejorar el valor de mi propiedad."
+    },
+    {
+      "id": 4,
+      "userId": 8,
+      "phone": "123456789",
+      "description": "Description"
+    }
+  ],
+  "business": [
+    {
+      "id": 1,
+      "name": "RenovaPro",
+      "image": "https://img.freepik.com/foto-gratis/disenador-interiores-trabajando-pareja-joven_155003-27036.jpg?t=st=1714091383~exp=1714094983~hmac=2fdb20f7762dd31c5a2b4d1dbcb0a720ae612afadf9ffc14410d3f82c8b4a9f6&w=1380",
+      "expertise": "Hogar",
+      "address": "123 Calle Amarilla",
+      "city": "Lima",
+      "description": "Especialistas en renovaciones residenciales, ofreciendo soluciones innovadoras y de alta calidad. Con más de 10 años de experiencia. Ubicados en el distrito de San Miguel en Lima, Perú.",
+      "remodelerId": 1
+    },
+    {
+      "id": 2,
+      "name": "ReModelo",
+      "image": "https://img.freepik.com/foto-gratis/hombre-mujer-tiro-completo-pie-escalera_23-2149366705.jpg?t=st=1714091410~exp=1714095010~hmac=ff15cf4556ec150251bfd7b7d248f645ad134fbe63e8f2085fad594470551bb5&w=1380",
+      "expertise": "Habitacion",
+      "address": "99 Avenida Azul",
+      "city": "Piura",
+      "description": "Especialistas en renovaciones residenciales, ofreciendo soluciones innovadoras y de alta calidad. Con más de 10 años de experiencia. Ubicados en el distrito de San Miguel en Lima, Perú.",
+      "remodelerId": 2
+    },
+    {
+      "id": 3,
+      "name": "EcoRenovations",
+      "image": "https://img.freepik.com/foto-gratis/bodegon-objetivos-desarrollo-sostenible_23-2150196621.jpg?t=st=1714097994~exp=1714101594~hmac=46acdce4058e188976793a519bc95dc1bdb195715bee906ea164ba88e0a15259&w=1380",
+      "expertise": "Cocina",
+      "address": "123 Calle Verde",
+      "city": "Lima",
+      "description": "Especialistas en renovaciones residenciales, ofreciendo soluciones innovadoras y de alta calidad. Con más de 10 años de experiencia. Ubicados en el distrito de San Miguel en Lima, Perú.",
+      "remodelerId": 3
+    },
+    {
+      "id": 4,
+      "name": "ReNova",
+      "image": "https://img.freepik.com/foto-gratis/disenadores-moda-atelier-consultando-planes-lineas-ropa-tablero-ideas_23-2148846759.jpg?t=st=1714098111~exp=1714101711~hmac=77e098b94c0502ebb72396ead61beeed785038ea424e5351823f6e0b896a64ed&w=1380",
+      "expertise": "Baño",
+      "address": "104 Calle Estrella",
+      "city": "Arequipa",
+      "description": "Especialistas en renovaciones residenciales, ofreciendo soluciones innovadoras y de alta calidad. Con más de 10 años de experiencia. Ubicados en el distrito de San Miguel en Lima, Perú.",
+      "remodelerId": 4
+    }
+  ],
+  "project": [
+    {
+      "id": 1,
+      "name": "Renovación de habitación matrimonial",
+      "description": "En el proyecto de remodelación de la habitación matrimonial, renovamos por completo el espacio para crear un ambiente moderno y acogedor. Actualizamos la pintura de las paredes con tonos suaves y relajantes, instalamos nuevos muebles que maximizan el espacio y agregamos iluminación ambiental para crear una atmósfera cálida y romántica.",
+      "image": "https://img.freepik.com/foto-gratis/comodo-dormitorio-moderno-elegante-cabecero-madera-generado-ia_24640-87460.jpg?t=st=1714091277~exp=1714094877~hmac=ea13d6de1dfd502d8b2d44b7a0a0a00538c4b60e4980b1246e9f99691383c394&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 1,
+      "businessId": 1,
+      "contractorId": 1
+    },
+    {
+      "id": 2,
+      "name": "Patio de juegos funcional",
+      "description": "En el proyecto de renovación de patio de juegos, creamos un espacio divertido y seguro.",
+      "image": "https://img.freepik.com/foto-gratis/chica-sonriente-tiro-completo-sindrome-down_23-2149531917.jpg?t=st=1714098155~exp=1714101755~hmac=403567141cb1307b86321ad750d68939bab23c2860f97d0e27e8c312036da6c9&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 2,
+      "businessId": 1,
+      "contractorId": 1
+    },
+    {
+      "id": 3,
+      "name": "Dormitorio elegante",
+      "description": "En el proyecto de renovación de dormitorio, creamos un espacio lujoso y funcional.",
+      "image": "https://img.freepik.com/foto-gratis/dormitorio-lampara-arana-cama-manta-encima_188544-33431.jpg?t=st=1714098131~exp=1714101731~hmac=2eeba4d7aa4cbcf03b2804c409281ee95b50392253bd3b9164c9bdf883dc5df0&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 3,
+      "businessId": 2,
+      "contractorId": 2
+    },
+    {
+      "id": 4,
+      "name": "Renovación de habitación infantil",
+      "description": "En el proyecto de renovación de la habitación infantil, creamos un espacio vibrante y divertido que estimula la imaginación y el juego. Utilizamos colores alegres y patrones lúdicos en la pintura de las paredes y los accesorios decorativos. Instalamos muebles funcionales y seguros, diseñados específicamente para niños, que ofrecen tanto espacio de almacenamiento como áreas de juego.",
+      "image": "https://img.freepik.com/foto-gratis/interior-decoracion-habitacion-ninos-juguetes_23-2149096020.jpg?t=st=1714091504~exp=1714095104~hmac=7382e4055471b5ed4867ce54e9a597e6afa96e869b73721fc6f3eaa79cc86713&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 4,
+      "businessId": 2,
+      "contractorId": 2
+    },
+    {
+      "id": 5,
+      "name": "Estrena cocina nueva!",
+      "description": "En el proyecto de remodelación de la cocina, transformamos el espacio en un ambiente funcional y estéticamente atractivo. Actualizamos los gabinetes y electrodomésticos para mejorar la eficiencia y el estilo, instalamos encimeras de alta calidad para mayor durabilidad y elegancia, y diseñamos una distribución inteligente para maximizar el espacio de almacenamiento y la comodidad durante el uso diario.",
+      "image": "https://img.freepik.com/foto-gratis/hermoso-diseno-interior-cocina_23-2150976573.jpg?t=st=1714091319~exp=1714094919~hmac=20dc34d71dcf2041fa354a8c0f13d0fbed639d3f825eabbb8075aa14d00bb6e1&w=996",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 5,
+      "businessId": 3,
+      "contractorId": 3
+    },
+    {
+      "id": 6,
+      "name": "Cocina ecologica",
+      "description": "Creamos un ambiente de tranquilidad y confort en tu cocina, con una combinación de elegancia y funcionalidad.",
+      "image": "https://img.freepik.com/foto-gratis/primer-plano-contenedores-comida-desperdicio_23-2149316619.jpg?t=st=1714097951~exp=1714101551~hmac=ff9a13830ccd7878a7cc16aa777b3c2c72cf85fcab66347a62b0611cae80de3a&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 6,
+      "businessId": 3,
+      "contractorId": 3
+    },
+    {
+      "id": 7,
+      "name": "Renovación de baño principal",
+      "description": "En el proyecto de renovación del baño principal, creamos un espacio de lujo y funcionalidad. Actualizamos los azulejos y la grifería para dar un aspecto moderno y elegante. Instalamos una ducha de alta tecnología con múltiples funciones y una bañera independiente para mayor comodidad y relajación. Además, incorporamos iluminación LED para crear un ambiente relajante y spa. El diseño se centró en maximizar el espacio de almacenamiento y mejorar la eficiencia del baño, convirtiéndolo en un oasis de tranquilidad y confort.",
+      "image": "https://img.freepik.com/foto-gratis/bano-pequeno-estilo-moderno-plantas_23-2150700372.jpg?t=st=1714091587~exp=1714095187~hmac=ac055413b11839d2506026afdeac945a48985a9353e09c723bdad7c40b27d374&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 7,
+      "businessId": 4,
+      "contractorId": 4
+    },
+    {
+      "id": 8,
+      "name": "Renovación de cuarto de servicios",
+      "description": "En el proyecto de renovación del cuarto de servicios, creamos un espacio tranquilo y relajante. Utilizamos colores tierra y patrones minimalistas en la pintura de las paredes y los accesorios decorativos. Instalamos muebles funcionales y seguros, diseñados específicamente para tus necesidades.",
+      "image": "https://img.freepik.com/foto-gratis/bano-moderno-espejos-elegantes-fregaderos-blancos-limpios_91128-4632.jpg?t=st=1714631027~exp=1714634627~hmac=d3bd68f5ef5a6a9841b6edd5b569f3258671221e279890527d3381e340ec38a7&w=1380",
+      "startDate": "2024-05-01T05:00:00.000Z",
+      "finishDate": "2024-06-01T05:00:00.000Z",
+      "projectRequestId": 8,
+      "businessId": 4,
+      "contractorId": 4
+    }
+  ],
+  "review": [
+    {
+      "id": 1,
+      "contractorId": 1,
+      "projectId": 1,
+      "duration": "1 mes",
+      "rating": 5,
+      "comment": "Excelente trabajo, muy profesionales y atentos a los detalles. ¡Recomendados!",
+      "image": "https://img.freepik.com/foto-gratis/comodo-dormitorio-moderno-elegante-cabecero-madera-generado-ia_24640-87460.jpg?t=st=1714091277~exp=1714094877~hmac=ea13d6de1dfd502d8b2d44b7a0a0a00538c4b60e4980b1246e9f99691383c394&w=1380"
+    },
+    {
+      "id": 2,
+      "contractorId": 2,
+      "projectId": 2,
+      "duration": "2 meses",
+      "rating": 4,
+      "comment": "Buen trabajo en general, aunque hubo algunos retrasos en la entrega. En general, satisfecho con el resultado.",
+      "image": "https://img.freepik.com/foto-gratis/dormitorio-lampara-arana-cama-manta-encima_188544-33431.jpg?t=st=1714098131~exp=1714101731~hmac=2eeba4d7aa4cbcf03b2804c409281ee95b50392253bd3b9164c9bdf883dc5df0&w=1380"
+    }
+  ],
+  "projectRequest": [
+    {
+      "id": 1,
+      "contractorId": 1,
+      "businessId": 1,
+      "name": "Alejandra",
+      "surname": "Garcia",
+      "email": "agarcia@gmail.com",
+      "phone": 987654321,
+      "address": "123 Calle Roja",
+      "city": "Lima",
+      "deadlineDate": "2024-06-01T05:00:00.000Z",
+      "budget": 10000,
+      "rooms": 2,
+      "summary": "Necesito renovar mi sala y comedor. Quiero un estilo moderno y minimalista, con colores neutros y muebles funcionales. Me gustaría agregar iluminación ambiental y un sistema de sonido integrado. Mi presupuesto es de $10,000 y me gustaría comenzar el proyecto en Julio de 2024."
+    },
+    {
+      "name": "Gonzalo",
+      "surname": "Restyle",
+      "phone": 989767545,
+      "address": "444 Calle Dorada",
+      "email": "gonzalo@restyle.com",
+      "deadlineDate": "2025-03-05T05:00:00.000Z",
+      "city": "Lima",
+      "budget": 5000,
+      "rooms": 1,
+      "summary": "Deseo que renuven el piso de mi cocina y pinten las paredes.",
+      "businessId": "4",
+      "contractorId": "1",
+      "id": 4
+    },
+    {
+      "name": "Janover",
+      "surname": "Vela",
+      "phone": 999999999,
+      "address": "15067",
+      "email": "jan@dc",
+      "deadlineDate": "2024-06-20T05:00:00.000Z",
+      "city": "chorrillos",
+      "budget": 4,
+      "rooms": 4,
+      "summary": "dfbd",
+      "remodelerId": "1",
+      "contractorId": "4",
+      "id": 5
+    }
+  ],
+  "tracking": [
+    {
+      "id": 4,
+      "remodelerId": 4,
+      "contractorId": 1,
+      "requirements": {
+        "jobTitle": "Cambio de piso y pintura de habitación en Miraflores",
+        "jobDescription": "Cambio de piso y pintura de un cuarto de 12m²",
+        "jobRequirements": [
+          "Permiso de contruccion no requerido",
+          "Debe tener licencia de construcción y seguro de responsabilidad civil",
+          "Retiro de piso antiguo",
+          "Parchado de agujeros menores en las paredes",
+          "Cerámica de 60x60 cm color gris claro",
+          "Pintura blanca mate",
+          "Horario de trabajo lunes a viernes 9:00am - 4:00pm",
+          "Debe dejar el cuarto limpio y ordenado al finalizar el trabajo.",
+          "Fecha de inicio y finalización:15 de mayo de 2024 al 25 de mayo de 2024",
+          "Presupuesto:S/. 10,000"
+        ],
+        "accepted": false
+      },
+      "technicalVisit": {
+        "price": 145,
+        "date": "2024-05-26T05:00:00.000Z",
+        "additionalDetails": "Cerca de Calle Los Girasoles 456, Miraflores, Lima, Peru"
+      },
+      "quote": [
+        {
+          "description": "Economica",
+          "price": 5000,
+          "details": "Ceramica San Lorenzo Linea economica s/. 30m², pintura Renner Linea economica s/.20/galon, albañil s/. 150/dia, pintor s/. 120/dia"
+        },
+        {
+          "description": "Intermedia",
+          "price": 7500,
+          "details": "Ceramica Cisa o Ceramica Lafarge s/. 50m², pintura Montana o Pinturas Latex s/.30/galon, albañil s/. 150/dia, pintor s/. 120/dia"
+        },
+        {
+          "description": "Premium",
+          "price": 10000,
+          "details": "Ceramica Duratex s/. 80m², pintura Sherwin-Williams o Pinturas PPG s/.40/galon, albañil s/. 150/dia, pintor s/. 120/dia"
+        }
+      ],
+      "projectApproval": true
+    }
+  ]
+}

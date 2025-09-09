@@ -1,0 +1,107 @@
+#create-review-container{
+    margin-top: 3rem;
+    padding-top: 3rem;
+    margin-left: 21rem;
+    margin-right: 3rem;
+    font-family: "Montserrat", sans-serif;
+}
+#create-review-container .review-form{
+    background-color: #dedeff;
+    font-family: "Montserrat", sans-serif;
+}
+#create-review-container .information-review-container{
+    display: flex;
+    flex-direction: row;
+}
+#create-review-container .review-header-container{
+    display: flex;
+    justify-content: left;
+}
+.review-title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3F51B5;
+}
+#create-review-container #editForm{
+    display: flex;
+    justify-content: center;
+}
+.fileInput {
+    position: absolute;
+    z-index: 9;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.review-form{
+    background-color: #dedeff;
+    padding-left: 1rem;
+    width: 50%;
+    padding-right: 1rem;
+}
+.send-button{
+    display: flex;
+    justify-content: right;
+}
+#create-review-container .send-btn{
+    width: 6rem;
+    background-color: #3F51B5;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 1.5rem;
+    height: 3rem;
+}
+.advice-container{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.advice-paragraph{
+    width: 300px;
+    opacity: 70%;
+}
+.checked{
+    color:yellow;
+}
+#create-review-container mat-icon{
+    cursor: pointer;
+}
+
+
+/*reviews styles*/
+.remodeler-reviews {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+.remodeler-reviews-card{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.review-card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+}
+.review-card-img{
+    margin-bottom: 1rem;
+}
+.review-content{
+    padding: 1rem;
+}
+.review-icon{
+    display: inline-block;
+
+}
+
+@media (hover){
+    .send-btn:hover{
+        transition: 0.4s ease;
+        background-color: #003F8F;
+    }
+}

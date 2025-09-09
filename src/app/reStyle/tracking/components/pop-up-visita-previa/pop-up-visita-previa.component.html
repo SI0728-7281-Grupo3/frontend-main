@@ -1,0 +1,15 @@
+<div class="visita-previa__pop-up">
+  <h2 class="visita-previa__pop-up__title">Visita Previa</h2>
+  <div class="visita-previa__pop-up__icon">
+    <button mat-icon-button class="example-icon favorite-icon" (click)="openPopup()" aria-label="Edit button">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  @if(enablePopUp == 'edit-visita') {
+    <app-pop-up-visita-previa-edit [TimelineData]="TimelineData"></app-pop-up-visita-previa-edit>
+  }
+  <h3>Observacion del espacio previo a cotizacion, este costo sera descontado del precio total al finalizar el proyecto.</h3>
+  <p class="costo_visita">Costo: S/.{{ TimelineData.visitaPrevia.costo }}</p>
+  <p class="detalles_adicionales">{{ TimelineData.visitaPrevia.detallesAdicionales }}</p>
+
+</div>

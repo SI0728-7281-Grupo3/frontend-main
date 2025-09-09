@@ -1,0 +1,49 @@
+<app-toolbar-remodeler></app-toolbar-remodeler>
+<app-sidebar></app-sidebar>
+
+<div id="create-project-container">
+    <div class="project-header-container">
+        <div class="project-header">
+            <p class="project-title">Add Remodeling Project</p>
+        </div>
+    </div>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab class="label-title" label="Information">
+            <div class="information-project-container">
+                <div class="project-form">
+                    <form [formGroup]="portfolioForm" (ngSubmit)="onSubmit()">
+                        <p>Image Url</p>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Add an image</mat-label>
+                                <input matInput formControlName="image" placeholder="Image url" required>
+                            </mat-form-field>
+
+                        <p> Title <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Add a project title</mat-label>
+                                <input matInput formControlName="name" placeholder="Title" required>
+                            </mat-form-field>
+                        </p>
+
+                        <p> Description <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Add a short description</mat-label>
+                                <textarea matInput formControlName="description" placeholder="Description" required></textarea>
+                            </mat-form-field>
+                        </p>
+
+                        <div class="send-button">
+                            <button class="send-btn" type="submit" mat-flat-button>Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="advice-container">
+                    <mat-icon style="opacity: 70%">info</mat-icon>
+                    <div class="advice-paragraph">
+                        <p>Post a project you have done before so that your clients know what they can expect from you.  Increase your opportunities by letting them know about your work.</p>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

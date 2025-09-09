@@ -1,0 +1,93 @@
+.sidenav-container{
+  background-color: #3F51B5;
+  width: 15%;
+  position: fixed;
+  height: 100%;
+  color: white;
+}
+.sidenav-content{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1rem;
+  font-family: "Montserrat", sans-serif;
+
+}
+.sidenav-icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+.user-name{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.sidenav-icons mat-icon{
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.sidenav-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #f5f5f5;
+  cursor: pointer;
+}
+.search-form{
+  color: #5c5c5c;
+}
+.sidenav-links{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sidenav-links a{
+  text-decoration: none;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+.sidenav-links mat-icon{
+  cursor: pointer;
+  transition: 0.4s ease;
+  margin: 0.3rem 1rem 0 0.5rem;
+}
+.sidenav-links p{
+  font-size:1rem;
+}
+.sidenav-links-separator{
+  border-bottom: 1px solid #f5f5f5;
+  margin: 0.5rem 0.5rem 0 0;
+}
+.sidenav-end{
+  position: fixed;
+  bottom: 0;
+}
+@media (hover){
+  .sidenav-icons mat-icon:hover{
+    transform: translateY(3px);
+    color: #DEDEFF;
+  }
+  .sidenav-links a:hover{
+    transform: translateY(3px);
+    color: #DEDEFF;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sidenav-container{
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .sidenav-container{
+    display: none;
+  }
+}
+@media screen and (max-width: 1480px) {
+  .sidenav-container{
+    display: none;
+  }
+}
+

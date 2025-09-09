@@ -1,0 +1,133 @@
+.remodeler-search-container{
+  margin-left: 20rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  margin-right: 3rem;
+}
+.remodeler-search-start {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  width: 85rem;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+}
+.search-bar{
+  width: 75rem;
+}
+.search-filter{
+  background-color: #F5F5F5;
+  height: 3.4rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid gray;
+  font-size: 2rem;
+  margin-right: 2.5rem;
+}
+.filter-btn{
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0.5rem;
+}
+.search-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.search-btn, .clear-btn{
+  width: 6rem;
+  background-color: #3F51B5;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+}
+.search-tabs mat-tab{
+  display: flex;
+}
+.tab-label{
+  font-family: "Montserrat", sans-serif;
+}
+.search-tabs{
+  font-family: "Montserrat", sans-serif;
+}
+.remodeler-cards-home{
+  display: inline-grid;
+  margin-top: 1rem;
+  background-color: #F5F5F5;
+  width: 23rem;
+}
+.remodeler-cards-home a{
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: 0.4s;
+  margin-left: 1rem;
+  color: #3F51B5;
+  font-weight: bold;
+  font-size:1.5rem;
+}
+.project-card {
+  max-width: 350px;
+  margin: 0.5rem;
+}
+.project-card-img{
+  object-fit: cover;
+  width: 100%;
+  height: 175px;
+}
+.remodeler-cards-expertise{
+  margin-right: 1rem;
+  margin-top: 1rem;
+  background-color: #F5F5F5;
+  width: 23rem;
+}
+.remodeler-cards-expertise a{
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: 0.4s;
+  margin-left: 1rem;
+  color: #3F51B5;
+  font-weight: bold;
+  font-size:1.5rem;
+}
+
+@media (hover){
+  .search-btn:hover, .clear-btn:hover{
+    transition: 0.4s ease;
+    background-color: #DEDEFF;
+  }
+  .remodeler-cards-home a:hover{
+    color: #757DE8;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search-bar, .search-filter, .search-btn, .clear-btn{
+    display:none;
+  }
+  .remodeler-cards-home{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .remodeler-search-start {
+    display: flex;
+    justify-content: left;
+    width:100%;
+  }
+}
+@media screen and (max-width: 1480px) {
+  .remodeler-search-container{
+    margin-top: 1.5rem;
+    margin-left: 5rem;
+  }
+  .remodeler-search-start {
+    display: flex;
+    justify-content: left;
+    width:100%;
+  }
+  .search-bar{
+    width: 100%;
+  }
+}

@@ -1,0 +1,49 @@
+.cotizacion__pop-up {
+  position: fixed;
+  top: 22%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  width: 300px;
+  outline-color: #757DE8;
+  outline-style: solid;
+  outline-width: 1px;
+  color: #757DE8;
+
+}
+
+.cotizacion__pop-up__title {
+  color:#3F51B5;
+  margin-bottom: 10px;
+}
+.cotizacion__pop-up h4,
+.cotizacion__pop-up p {
+
+}
+
+.opciones_cotizacion {
+  margin-bottom: 15px;
+}
+
+.opciones_cotizacion ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.opciones_cotizacion li {
+  margin-bottom: 10px;
+}
+
+
+.visita-previa__pop-up__icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.example-icon {
+  padding: 0;
+}
+

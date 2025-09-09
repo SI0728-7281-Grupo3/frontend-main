@@ -1,0 +1,120 @@
+<app-toolbar />
+<app-contractor-sidebar-contractor *ngIf="this.type == 'contractor'" />
+<app-sidebar *ngIf="this.type == 'remodeler'"/>
+
+<div class="remodeler-search-container">
+  <div class="remodeler-search-start">
+    <form class="search-form">
+      <mat-form-field class="search-bar">
+        <mat-icon matPrefix>search</mat-icon>
+        <input class="bar" matInput placeholder="Search by..." value="" [(ngModel)]="searchTerm" name="searchTerm">
+      </mat-form-field>
+    </form>
+
+    <div class="search-filter">
+      <button class="filter-btn" mat-button [matMenuTriggerFor]="menu">Filter</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="applyFilter('Lima')">Lima</button>
+        <button mat-menu-item (click)="applyFilter('Provincia')">Regions</button>
+        <button mat-menu-item (click)="applyFilter('Todos')">See All</button>
+      </mat-menu>
+    </div>
+
+    <div class="search-buttons">
+      <button class ="search-btn" mat-flat-button (click)="applySearchFilter(searchTerm)">Search</button>
+      <button class ="clear-btn" mat-flat-button (click)="clearFilter()">Clean</button>
+    </div>
+  </div>
+
+  <div class="remodeler-search-tabs">
+    <mat-tab-group class="search-tabs">
+
+        <mat-tab label="All">
+            <div class="remodeler-cards-home" *ngFor="let business of businesses">
+                <a (click)="redirectToComponent(business.id)">{{business.name}}</a>
+                <div class="remodeler-card" *ngFor="let project of getProjectsByBusinessId(business.id)">
+                    <mat-card class="project-card">
+                        <mat-card-header>
+                            <p style="color: #757DE8;">{{business.expertise}}</p>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>{{project.name}}</p>
+                            <img class="project-card-img" mat-card-image src="{{project.Image}}" alt="Project Image">
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+
+
+        <mat-tab label="Bedroom/Bathroom">
+        <div class="remodeler-cards-expertise" *ngFor="let business of businesses">
+          <ng-container *ngIf="business.expertise === 'Habitacion' || business.expertise === 'Baño'">
+            <a (click)="redirectToComponent(business.id)">{{business.name}}</a>
+            <div class="remodeler-card" *ngFor="let project of getProjectsByBusinessId(business.id)">
+              <mat-card class="project-card">
+                <mat-card-header>
+                  <p style="color: #757DE8;">{{business.expertise}}</p>
+                </mat-card-header>
+                <mat-card-content >
+                  <p>{{project.name}}</p>
+                  <img class="project-card-img" mat-card-image src="{{project.Image}}" alt="Project Image">
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Kitchen/Dinning Room">
+        <div class="remodeler-cards-expertise" *ngFor="let business of businesses">
+          <ng-container *ngIf="business.expertise === 'Cocina'">
+            <a (click)="redirectToComponent(business.id)">{{business.name}}</a>
+            <div class="remodeler-card" *ngFor="let project of getProjectsByBusinessId(business.id)">
+              <mat-card class="project-card">
+                <mat-card-header>
+                  <p style="color: #757DE8;">{{business.expertise}}</p>
+                </mat-card-header>
+                <mat-card-content >
+                  <p>{{project.name}}</p>
+                  <img class="project-card-img" mat-card-image src="{{project.Image}}" alt="Project Image">
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+        </div>
+      </mat-tab>
+      <mat-tab label="Others">
+        <div class="remodeler-cards-expertise" *ngFor="let business of businesses">
+          <ng-container *ngIf="business.expertise === 'Hogar'">
+            <a (click)="redirectToComponent(business.id)">{{business.name}}</a>
+            <div class="remodeler-card" *ngFor="let project of getProjectsByBusinessId(business.id)">
+              <mat-card class="project-card">
+                <mat-card-header>
+                  <p style="color: #757DE8;">{{business.expertise}}</p>
+                </mat-card-header>
+                <mat-card-content >
+                  <p>{{project.name}}</p>
+                  <img class="project-card-img" mat-card-image src="{{project.Image}}" alt="Project Image">
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div class="remodeler-search-pagination">
+    <mat-paginator [length]="8" [pageSizeOptions]="[4]" aria-label="Select page">
+    </mat-paginator>
+  </div>
+
+</div>
+
+
+
+
+
+
+

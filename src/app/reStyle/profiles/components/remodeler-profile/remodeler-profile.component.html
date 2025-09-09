@@ -1,0 +1,68 @@
+<app-toolbar></app-toolbar>
+<app-sidebar ></app-sidebar>
+
+
+<div class="profile-section">
+    <div class="profile-container">
+        <mat-card class="card">
+
+            <mat-card-header class="title-profile">
+                <mat-card-title> {{userData.firstName + " " + userData.paternalSurname + " " + userData.maternalSurname}}</mat-card-title>
+                <mat-card-subtitle> Expert in remodeling </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content class="information-profile">
+
+                <div class="photo-profile">
+                    <img src="{{userData.image}}" alt="photo" class="photo">
+                </div>
+
+                <div class="description-profile">
+                    <p>{{remodelers.description}}</p>
+                </div>
+
+                <div class="contact-information">
+
+                    <div class="information">
+                        <mat-icon style="color:#003F8F;" class="icons">email</mat-icon>
+                        <span style="color:#003F8F;" class="correo-text">Email</span>
+                    </div>
+                    <p>{{userData.email}}</p>
+
+                    <div class="information">
+                        <mat-icon style="color:#003F8F;" class="icons">perm_contact_calendar</mat-icon>
+                        <span style="color:#003F8F;" class="contacto-text">Contact</span>
+                    </div>
+                    <p>+51 {{userData.phone}}</p>
+
+                    <div class="information">
+                        <mat-icon style="color:#003F8F;" class="icons">subscriptions</mat-icon>
+                        <span style="color:#003F8F;" class="suscripcion-text">Subscription </span>
+                    </div>
+                    <p>Premium</p>
+
+                </div>
+            </mat-card-content>
+            <mat-card-actions class="actions">
+                <button mat-raised-button color="primary" (click)="openEditDialog()">Edit</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="portfolio-content">
+    <div class="portfolio-projects">
+        <h3 style="color: #3F51B5; font-size: 1.5rem;">Projects</h3>
+        <div class="remodeler-reviews-card" *ngFor="let project of getProjectsByBusinessId(4)">
+            <mat-card class="review-card">
+                <mat-card-header>
+                    <img class="review-card-img" mat-card-image src="{{project.Image}}" alt="Project Image">
+                </mat-card-header>
+                <mat-card-content class="review-content">
+                    <p style="color: #3F51B5; font-size: 1rem; font-weight: bold;">{{project.name}}</p>
+                    <p>{{project.description}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

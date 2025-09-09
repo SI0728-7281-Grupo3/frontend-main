@@ -1,0 +1,26 @@
+<mat-toolbar class="toolbar fixed-toolbar">
+    <mat-toolbar-row>
+        <div class="toolbar-title-logo">
+            <img routerLink="/business" class="toolbar-logo" src="/assets/images/restyle-logo.svg" alt="reStyle Logo" width="40" height="40">
+            <p routerLink="/business" class="toolbar-title">ReStyle</p>
+        </div>
+        <div class="toolbar-icons">
+            <div class="toolbar-profile">
+                <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example person outline icon">person_outline</mat-icon>
+                <p class="toolbar-prof" (click)="redirectToProfile()">My Profile</p>
+            </div>
+            <div class="toolbar-menu">
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Example menu icon">menu</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="redirectToRemodelers()">Remodelers</button>
+                    <button mat-menu-item (click)="redirectToReviews()">Reviews</button>
+                    <button mat-menu-item (click)="redirectToSupport()">Support</button>
+                    <button mat-menu-item (click)="logOut()">Log out</button>
+                </mat-menu>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+

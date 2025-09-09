@@ -1,0 +1,86 @@
+<app-toolbar/>
+<app-contractor-sidebar-contractor/>
+
+<div id="create-review-container">
+    <div class="review-header-container">
+        <div class="review-header">
+            <p class="review-title">Add Review</p>
+        </div>
+    </div>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" >
+        <mat-tab class="label-title" label="All reviews">
+            <div class="remodeler-reviews">
+                <h2 style="color: #3F51B5; font-size: 1.5rem;">Reseñas</h2>
+                <div class="remodeler-reviews-card" *ngFor="let review of reviews">
+                    <mat-card class="review-card">
+                        <mat-card-header>
+                            <img width="400px" class="review-card-img" mat-card-image src="{{review.image}}" alt="Review Image">
+                        </mat-card-header>
+                        <mat-card-content class="review-content">
+                            <p style="color: #3F51B5; font-size: 1rem; font-weight: bold;">{{review.project}}</p>
+                            <mat-icon class="review-icon">schedule</mat-icon> <p style="display: inline-block;">Duration: {{review.duration}}</p>
+                            <p>{{review.comment}}</p>
+                            <p style="display: inline-block;">Rating: {{review.rating}}</p> <mat-icon class="review-icon" style="color: #DDAF0A;">star</mat-icon>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+
+        <mat-tab class="label-title" label="Create">
+            <div class="information-review-container">
+                <div class="review-form">
+                    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                        <p>Image Url</p>
+                        <mat-form-field appearance="fill" style="width: 100%;">
+                            <mat-label>Add an image of the result</mat-label>
+                            <input matInput formControlName="image" placeholder="Image url" required>
+                        </mat-form-field>
+
+                        <p> Duration <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Add the project duration</mat-label>
+                                <input matInput formControlName="duration" placeholder="Duration" required>
+                            </mat-form-field>
+                        </p>
+
+                        <p> Comment <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Add a short comment</mat-label>
+                                <textarea matInput formControlName="comment" placeholder="Comment" required></textarea>
+                            </mat-form-field>
+                        </p>
+
+                        <p> Rating <br>
+                            <mat-form-field appearance="fill" style="width: 100%;">
+                                <mat-label>Rating</mat-label>
+                                <input matInput formControlName="rating" placeholder="Description" required
+                                       type="number" min="1" max="5">
+                                <mat-error *ngIf="reviewForm.get('rating')?.hasError('required')">
+                                    Rating is required
+                                </mat-error>
+                                <mat-error *ngIf="reviewForm.get('rating')?.hasError('min')">
+                                    Rating must be at least 1
+                                </mat-error>
+                                <mat-error *ngIf="reviewForm.get('rating')?.hasError('max')">
+                                    Rating cannot be more than 5
+                                </mat-error>
+                            </mat-form-field>
+                        </p>
+
+                        <div class="send-button">
+                            <button class="send-btn" type="submit" mat-flat-button>Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="advice-container">
+                    <mat-icon style="opacity: 70%">info</mat-icon>
+                    <div class="advice-paragraph">
+                        <p>Share your experience with a service. Describe what you liked or disliked, with specific details. Avoid mentioning prices . Focus on how the service made you feel. The best reviews are informative and easy to read.</p>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+</div>

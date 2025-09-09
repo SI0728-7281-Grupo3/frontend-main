@@ -1,0 +1,18 @@
+<form [formGroup]="myform" (ngSubmit)="Saveuser()">
+  <h1 mat-dialog-title>Actualizar Datos de Visita</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Monto</mat-label>
+      <input formControlName="monto" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Detalles</mat-label>
+      <input matInput formControlName="detalles">
+    </mat-form-field>
+  </div>
+
+  <mat-dialog-actions>
+    <button mat-raised-button type="submit" color="primary">Guardar</button>
+    <a (click)="closePopUp()" mat-raised-button color="mat-deep-purple">Cerrar</a>
+  </mat-dialog-actions>
+</form>

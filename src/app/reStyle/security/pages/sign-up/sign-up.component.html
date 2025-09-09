@@ -1,0 +1,59 @@
+<app-toolbar-home></app-toolbar-home>
+
+<section class="signup-container">
+    <div class="signup-section">
+        <div class="signup-form-container">
+            <div class="signup-logo">
+                <img src="assets/images/logo-ReStyle.svg" alt="ReStyle logo" class="logo-image">
+                <span class="logo-text">ReStyle</span>
+            </div>
+
+            <span class="signup-form-title">Sign Up</span>
+            <p>Sign up with your data information</p>
+
+            <form [formGroup]="form" (submit)="onSubmit()" class="signup-form">
+                <mat-form-field appearance="fill" class="full-width">
+                    <input matInput placeholder="Username" id="username" name="username" required formControlName="username">
+                    <mat-error *ngIf="isInvalidControl(form, 'username')">{{errorMessagesForControl(form, 'username')}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <input matInput placeholder="Password" id="password" name="password" type="password" required formControlName="password">
+                    <mat-error *ngIf="isInvalidControl(form, 'password')">{{errorMessagesForControl(form, 'password')}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Role</mat-label>
+                    <mat-select id="roleSelected" name="roleSelected" required formControlName="roleSelected">
+                        <mat-option value="contractor">Contractor</mat-option>
+                        <mat-option value="remodeler">Remodeler</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isInvalidControl(form, 'roleSelected')">{{errorMessagesForControl(form, 'roleSelected')}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <input matInput placeholder="Email" id="email" name="email" required formControlName="email">
+                    <mat-error *ngIf="isInvalidControl(form, 'email')">{{errorMessagesForControl(form, 'email')}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <input matInput placeholder="First name" id="firstName" name="firstName" required formControlName="firstName">
+                    <mat-error *ngIf="isInvalidControl(form, 'firstName')">{{errorMessagesForControl(form, 'firstName')}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <input matInput placeholder="Paternal surname" id="paternalSurname" name="paternalSurname" required formControlName="paternalSurname">
+                    <mat-error *ngIf="isInvalidControl(form, 'paternalSurname')">{{errorMessagesForControl(form, 'paternalSurname')}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <input matInput placeholder="Maternal surname" id="maternalSurname" name="maternalSurname" required formControlName="maternalSurname">
+                    <mat-error *ngIf="isInvalidControl(form, 'maternalSurname')">{{errorMessagesForControl(form, 'maternalSurname')}}</mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" class="sign-up-button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</section>
+

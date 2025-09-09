@@ -1,0 +1,214 @@
+<app-toolbar> </app-toolbar>
+<app-contractor-sidebar-contractor *ngIf="this.type == 'contractor'" />
+<app-sidebar *ngIf="this.type == 'remodeler'" />
+
+<div class="remodeler-profile-container">
+
+    <div class="remodeler-header-container">
+        <div class="remodeler-profile-header">
+            <p class="remodeler-name">{{ business.name }}</p>
+            <p class="remodeler-address">{{ business.address + ', ' + business.city}}</p>
+        </div>
+        <div class="remodeler-exp">
+            <p class="remodeler-expertise">{{ business.expertise }}</p>
+        </div>
+    </div>
+
+    <div class="remodeler-profile-tabs">
+        <mat-tab-group class="profile-tabs">
+            <mat-tab label="Profile">
+                <div class="remodeler-profile-card">
+                    <mat-card class="profile-card">
+                        <mat-card-header>
+                            <img class="remodeler-card-img" mat-card-image src="{{business.image}}" alt="Business Image">
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p style="color: #757DE8;">{{business.expertise}}</p>
+                            <p style="color: #3F51B5; font-size: 1.5rem; font-weight: bold;">{{business.name}}</p>
+                            <p>{{business.description}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                    <div class="remodeler-contact-form">
+
+                        <form [formGroup]="contactForm" (ngSubmit)="submitFormContact()">
+                            <p style="font-weight: bold; font-size: 1.2rem;">Contact us!</p>
+                            <div class="form-names form-contact">
+                                <p> Name <br>
+                                    <mat-form-field appearance="fill"  style="width: 100%;">
+                                        <mat-label>Name</mat-label>
+                                        <input matInput placeholder="" formControlName="nameContact">
+                                        <mat-error *ngIf="nameContact?.errors?.['required']">Name is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </p>
+                                <p> Lastname <br>
+                                    <mat-form-field appearance="fill"  style="width: 100%;">
+                                        <mat-label>Lastname</mat-label>
+                                        <input matInput placeholder="" formControlName="surnameContact">
+                                        <mat-error *ngIf="surnameContact?.errors?.['required']">Lastname is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </p>
+                            </div>
+                            <p> Email <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="" formControlName="emailContact">
+                                    <mat-error *ngIf="emailContact?.errors?.['required']">Email is <strong>required</strong></mat-error>
+                                    <mat-error *ngIf="emailContact?.errors?.['email']">It must be a valid email</mat-error>
+                                </mat-form-field>
+                            </p>
+                            <p> Phone <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>999999999</mat-label>
+                                    <input matInput placeholder="" formControlName="phoneContact">
+                                    <mat-error *ngIf="phoneContact?.errors?.['required']">Phone is <strong>required</strong></mat-error>
+                                    <mat-error *ngIf="phoneContact?.errors?.['pattern']">Phone must have 9 digits</mat-error>
+                                </mat-form-field>
+                            </p>
+                            <p> Message <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Write your message</mat-label>
+                                    <input matInput placeholder="" formControlName="messageContact">
+                                    <mat-error *ngIf="messageContact?.errors?.['required']">Message is <strong>required</strong></mat-error>
+                                </mat-form-field>
+                            </p>
+                            <div class="send-button">
+                                <button class ="send-btn" mat-flat-button type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Portfolio">
+                <div class="portfolio-content">
+                    <div class="portfolio-info">
+                        <img src="{{business.image}}" alt="Logo" width="250px">
+                        <h2>{{business.name}}</h2>
+                        <p>{{business.description}}</p>
+                    </div>
+                    <div class="portfolio-projects">
+                        <h3>Our Projects</h3>
+                        <div class="remodeler-reviews-card" *ngFor="let project of getProjectsByBusinessId(business.id)">
+                            <mat-card class="review-card">
+                                <mat-card-header>
+                                    <img class="review-card-img" mat-card-image src="{{project.Image}}" alt="Project Image">
+                                </mat-card-header>
+                                <mat-card-content class="review-content">
+                                    <p style="color: #3F51B5; font-size: 1rem; font-weight: bold;">{{project.name}}</p>
+                                    <p>{{project.description}}</p>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Reviews">
+                <div class="remodeler-reviews-card" *ngFor="let review of getReviewsByBusinessId(business.id)">
+                    <mat-card class="review-card">
+                        <mat-card-header>
+                            <img class="review-card-img" mat-card-image src="{{review.image}}" alt="Review Image">
+                        </mat-card-header>
+                        <mat-card-content class="review-content">
+                            <p style="color: #3F51B5; font-size: 1rem; font-weight: bold;">{{review.projectName}}</p>
+                            <mat-icon class="review-icon">person</mat-icon> <p style="display: inline-block;">Client: </p> <p style="display: inline-block; color: #757DE8;"> Contratista </p> <br>
+                            <mat-icon class="review-icon">schedule</mat-icon> <p style="display: inline-block;">Duration: {{review.duration}}</p>
+                            <p>{{review.comment}}</p>
+                            <p style="display: inline-block;">Rating: {{review.rating}}</p> <mat-icon class="review-icon" style="color: #DDAF0A;">star</mat-icon>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Request Project">
+                <div class="remodeler-proyect-tab">
+                    <form [formGroup]="projectRequestForm" (ngSubmit)="onSubmit()">
+                        <div class="remodeler-proyect-form">
+                            <p style="font-weight: bold; font-size: 1.2rem;">Request a budget for your project!</p>
+                            <h3>Your Personal Data</h3>
+                            <div class="form-client-data">
+                                <div class="client-data" > Name <br>
+                                    <mat-form-field appearance="fill"  style="width: 100%;">
+                                        <input matInput placeholder="Name" required formControlName="name">
+                                        <mat-error *ngIf="name?.errors?.['required']">Name is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="client-data"> Lastname <br>
+                                    <mat-form-field appearance="fill"  style="width: 100%;">
+                                        <input matInput placeholder="Lastname" required formControlName="surname">
+                                        <mat-error *ngIf="surname?.errors?.['required']">Lastname is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="client-data">  Phone <br>
+                                    <mat-form-field appearance="fill" style="width: 100%;">
+                                        <input matInput type="number" placeholder="999 999 999" required formControlName="phone">
+                                        <span matTextPrefix>+51&nbsp;</span>
+                                        <mat-error *ngIf="phone?.errors?.['required']">Phone is <strong>required</strong></mat-error>
+                                        <mat-error *ngIf="phone?.errors?.['pattern']">Phone must have 9 digits</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="client-data"> Email <br>
+                                    <mat-form-field appearance="fill" style="width: 100%;">
+                                        <input matInput placeholder="username@email.com" required formControlName="email">
+                                        <mat-error *ngIf="email?.errors?.['required']">Email is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="client-data"> Address <br>
+                                    <mat-form-field appearance="fill" style="width: 100%;">
+                                        <input matInput placeholder="Address" required formControlName="address">
+                                        <mat-error *ngIf="address?.errors?.['required']">Address is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="client-data"> City <br>
+                                    <mat-form-field appearance="fill" style="width: 100%;">
+                                        <input matInput placeholder="City" required formControlName="city">
+                                        <mat-error *ngIf="city?.errors?.['required']">City is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <h3>Project Information</h3>
+                            <div class="form-proyect-data">
+                                <div> Date estimated <br>
+                                    <mat-form-field>
+                                        <mat-label>Date</mat-label>
+                                        <input matInput [matDatepicker]="picker" formControlName="deadlineDate">
+                                        <mat-hint>MM/DD/YYYY</mat-hint>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                        <mat-error *ngIf="deadlineDate?.errors?.['required']">Date is <strong>required</strong></mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div> Budget <br>
+                                    <mat-form-field floatLabel="always">
+                                        <mat-label>Amount in $</mat-label>
+                                        <input matInput type="number" class="example-right-align" placeholder="0" required formControlName="budget">
+                                        <span matTextPrefix>$&nbsp;</span>
+                                        <mat-error *ngIf="budget?.errors?.['required']">Budget is <strong>required</strong></mat-error>
+                                        <mat-error *ngIf="budget?.errors?.['pattern']">Budget must be a number</mat-error>
+                                        <mat-error *ngIf="budget?.errors?.['min']">Budget must be a positive number</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div> Number of rooms <br>
+                                    <mat-form-field appearance="fill" style="width: 100%;">
+                                        <input matInput type="number" placeholder="Number" required formControlName="rooms">
+                                        <mat-error *ngIf="rooms?.errors?.['required']">Number of rooms  is <strong>required</strong></mat-error>
+                                        <mat-error *ngIf="rooms?.errors?.['pattern']">Number of rooms must be a number</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div> Resume <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <textarea matInput placeholder="Describe your requirements" required formControlName="summary"></textarea>
+                                    <mat-error *ngIf="summary?.errors?.['required']">Resume is <strong>required</strong></mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="send-button">
+                                <button class ="send-btn" mat-flat-button type="submit" >Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+</div>
