@@ -62,12 +62,22 @@ export class AuthenticationService {
                 next: (response) => {
                     this.signedIn.next(true);
                     this.signedInUserId.next(response.id);
-                    this.signedInUsername.next(response.username);
-                    localStorage.setItem('token', response.token);
+                    this.signedInUsername.next(response.username || response.firstName);
+                    // Usar sessionStorage para mayor seguridad - se limpia al cerrar la pestaña
+                    sessionStorage.setItem('token', response.token);
+                    sessionStorage.setItem('sessionId', response.sessionId);
+                    sessionStorage.setItem('userRole', response.userRole);
+                    sessionStorage.setItem('firstName', response.firstName);
                     sessionStorage.setItem('signInId', response.id.toString());
-                    console.log(`Signed in as ${response.username} with token ${response.token} and id ${response.id}`);
+                    console.log(`Signed in - ID: ${response.id}, FirstName: ${response.firstName}, UserRole: ${response.userRole}, SessionId: ${response.sessionId}`);
+                    console.log('SessionStorage guardado:', {
+                        token: response.token ? 'presente' : 'ausente',
+                        sessionId: response.sessionId,
+                        userRole: response.userRole,
+                        firstName: response.firstName
+                    });
                     this.router.navigate([`business`]).then();
-                    this.showSuccessMessage('Sign In succesfully. ' + response.username + ' Welcome to Restyle!')
+                    this.showSuccessMessage('Sign In succesfully. ' + (response.firstName || response.username) + ' Welcome to Restyle!')
                 },
                 error: (error) => {
                     this.showErrorMessage('Th user or password are incorrect. Please, try again.');
@@ -85,7 +95,11 @@ export class AuthenticationService {
         this.signedIn.next(false);
         this.signedInUserId.next(0);
         this.signedInUsername.next('');
-        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('sessionId');
+        sessionStorage.removeItem('userRole');
+        sessionStorage.removeItem('firstName');
+        sessionStorage.removeItem('signInId');
         this.router.navigate(['home/sign-in']).then();
     }
 }

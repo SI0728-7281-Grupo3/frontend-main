@@ -1,0 +1,85 @@
+<div class="chatbot-container" *ngIf="isAuthenticated">
+  <!-- Botón flotante -->
+  <button 
+    class="chatbot-button" 
+    (click)="toggleChat()"
+    [class.open]="isOpen"
+    aria-label="Abrir chat">
+    <svg *ngIf="!isOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <svg *ngIf="isOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <!-- Ventana de chat -->
+  <div class="chatbot-window" [class.open]="isOpen">
+    <div class="chatbot-header">
+      <div class="chatbot-header-content">
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <div class="chatbot-header-info">
+          <h3>Asistente Restyle</h3>
+          <span class="status">En línea</span>
+        </div>
+      </div>
+      <button class="close-button" (click)="closeChat()" aria-label="Cerrar chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="chatbot-messages" id="chat-messages">
+      <div 
+        *ngFor="let message of messages" 
+        class="message"
+        [class.user]="message.sender === 'user'"
+        [class.assistant]="message.sender === 'assistant'">
+        <div class="message-content">
+          {{ message.content }}
+        </div>
+        <div class="message-time">
+          {{ message.timestamp | date:'short' }}
+        </div>
+      </div>
+      <div *ngIf="isLoading" class="message assistant">
+        <div class="message-content">
+          <div class="typing-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chatbot-input-container">
+      <input
+        type="text"
+        class="chatbot-input"
+        [(ngModel)]="currentMessage"
+        (keypress)="onKeyPress($event)"
+        placeholder="Escribe tu mensaje..."
+        [disabled]="isLoading"
+      />
+      <button 
+        class="send-button" 
+        (click)="sendMessage()"
+        [disabled]="!currentMessage.trim() || isLoading"
+        aria-label="Enviar mensaje">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ToolbarComponent} from "./public/components/toolbar/toolbar.component";
 import {SidebarComponent} from "./public/components/sidebar/sidebar.component";
+import {ChatbotComponent} from "./reStyle/chatbot/components/chatbot/chatbot.component";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import {SidebarComponent} from "./public/components/sidebar/sidebar.component";
       RouterOutlet,
       ToolbarComponent,
       SidebarComponent,
+      ChatbotComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
